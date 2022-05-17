@@ -71,7 +71,7 @@ contract ERC20 is IERC20{
     }
 
     function approve(address spender, uint amount) external{
-        allowances[owner][spender] += amount;
+        allowances[msg.sender][spender] += amount;
         emit Approve (msg.sender, spender, amount);
     }
 
